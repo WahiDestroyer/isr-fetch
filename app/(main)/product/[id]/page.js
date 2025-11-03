@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 async function getProducts(id) {
   const res = await fetch(`https://dummyjson.com/products/${id}`, {
-    next: { revalidate: 30 },
+    next: { revalidate: 300 },
   });
   return res.json();
 }
@@ -16,6 +17,7 @@ const page = async ({ params }) => {
 
   return (
     <section className="max-w-5xl mx-auto p-6">
+      <Link href={"/"} className="px-4 py-2 bg-green-600 text-white my-3 rounded-2xl inline-block" >Return Home</Link>
       {/* Header Section */}
       <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
       <p className="text-gray-500 mb-6 capitalize">{product.category}</p>
@@ -74,6 +76,12 @@ const page = async ({ params }) => {
           <p className="text-gray-600">
             <strong>Shipping:</strong> {product.shippingInformation}
           </p>
+
+          {/* Dimensions */}
+          {/* <p className="text-gray-600">
+            <strong>Dimensions:</strong> W {product.dimensions.width}" × H{" "}
+            {product.dimensions.height}" × D {product.dimensions.depth}"
+          </p> */}
 
           {/* Rating */}
           <p className="text-yellow-500">⭐ {product.rating.toFixed(1)} / 5</p>

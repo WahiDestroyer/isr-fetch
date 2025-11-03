@@ -11,6 +11,7 @@ const ProductCard = ({ product }) => {
             src={product?.thumbnail}
             alt={product?.title}
             fill
+            sizes="100%"
             className="object-cover"
           />
         </div>
