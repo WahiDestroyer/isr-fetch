@@ -19,6 +19,7 @@ export default async function Home({ searchParams }) {
 
   const product = await getProducts({ limit, skip });
   const total = product?.total ?? 0;
+  
 
   const prevSkip = Math.max(0, skip - limit);
   const nextSkip = skip < total - limit ? skip + limit : skip;
@@ -28,6 +29,7 @@ export default async function Home({ searchParams }) {
   return (
     <>
       <div className="flex items-center justify-between">
+        
         <h2>All Product</h2>
         <Limit />
       </div>
