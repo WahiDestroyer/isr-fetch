@@ -75,12 +75,6 @@ const page = async ({ params }) => {
             <strong>Shipping:</strong> {product.shippingInformation}
           </p>
 
-          {/* Dimensions */}
-          {/* <p className="text-gray-600">
-            <strong>Dimensions:</strong> W {product.dimensions.width}" × H{" "}
-            {product.dimensions.height}" × D {product.dimensions.depth}"
-          </p> */}
-
           {/* Rating */}
           <p className="text-yellow-500">⭐ {product.rating.toFixed(1)} / 5</p>
 
